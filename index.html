@@ -227,6 +227,8 @@
                     const value_horas = this.url.searchParams.get(key) 
                     if (!value_horas || (Number.isNaN(Number(value_horas)))) {
                         this.setParam("horas", "3")
+                        if ((Number.isNaN(Number(value_horas))))
+                            showToast("🤖 ERROR de URL: hora extra no disponible si son menos de 5 horas", 4000)
                         return "3"
                     }
                 }
