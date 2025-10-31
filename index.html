@@ -297,8 +297,7 @@
                 value_horas = 0 // force a wrong numeric value
             switch (true) {
                 case (Number(value_horas) < 3 || Number(value_horas) > 5):
-                    console.log("value_horas tiene que estar entre 3 y 5")
-                    showToast("🤖 ERROR de URL: hora extra no disponible si son menos de 5 horas", 4000)
+                    showToast("🤖 ERROR de URL: horas debe estar entre 3 y 5", 4000)
                     cancelSetParams = true
                     break
                 case (Number(value_horas) < 5 && value_horaExtra):
