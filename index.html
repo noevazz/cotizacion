@@ -147,12 +147,48 @@
                 <h4>Cotizacion:</h4>
                 <div class="flex items-center justify-between">
                     <span class="text-3xl font-bold text-gray-900 dark:text-white" id="precio">$</span>
+
+                </div>
+
+                <div class="w-full max-w-sm mb-2">
+                    <p class="font-bold pt-2">Qué sigue?</p>
+                    <p>Copia este link y envíamelo a mi instagram.</p>
+                    <div class="flex items-center">
+                        <button onclick="copyToClipboard()"
+                            class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-blue-700 dark:bg-blue-600 border hover:bg-blue-800 dark:hover:bg-blue-700 rounded-s-lg border-blue-700 dark:border-blue-600 hover:border-blue-700 dark:hover:border-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">Copiar
+                            link</button>
+                        <div class="relative w-full">
+                            <input id="url" type="text" aria-describedby="helper-text-explanation"
+                                class="bg-gray-50 border border-e-0 border-gray-300 text-gray-500 dark:text-gray-400 text-sm border-s-0 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                readonly disabled />
+                        </div>
+                        <button data-tooltip-target="tooltip-url-shortener" onclick="copyToClipboard()"
+                            data-copy-to-clipboard-target="url-shortener"
+                            class="shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 hover:text-gray-900 bg-gray-100 border border-gray-300 rounded-e-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:hover:text-white dark:border-gray-600"
+                            type="button">
+                            <span id="default-icon">
+                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 18 20">
+                                    <path
+                                        d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
+                                </svg>
+                            </span>
+                            <span id="success-icon" class="hidden">
+                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 16 12">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-row-reverse">
                     <a href="https://www.instagram.com/djnoahmorphic/" target="_blank"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Instagram</a>
+                        Ir a my Instagram</a>
                 </div>
-                <p class="font-bold pt-2">Qué sigue?</p>
-                <p>Toma una captura a tu cotización y mandamela a instagram.</p>
             </div>
         </div>
 
@@ -161,6 +197,59 @@
 
 
     <script>
+        function copyToClipboard() {
+            var copyText = window.location.href
+
+            navigator.clipboard.writeText(copyText)
+                .then(() => {
+                    showToast("🤖 Se copio al porta papeles", 2500)
+
+                })
+                .catch(err => {
+                    showToast("🤖 Ups!, algo paso al copiar", 2500)
+                });
+        }
+
+        class UrlManager {
+            constructor() {
+                this.url = new URL(window.location.href);
+            }
+
+            // 🔹 Agrega o actualiza un parámetro
+            setParam(key, value) {
+                this.url.searchParams.set(key, value);
+                this._updateUrl();
+            }
+
+            // 🔹 Obtiene el valor de un parámetro
+            getParam(key) {
+                if (key == "horas") {
+                    if (!this.url.searchParams.get(key)) {
+                        this.setParam("horas", "3")
+                        return "3"
+                    }
+                }
+                return this.url.searchParams.get(key);
+            }
+
+            // 🔹 Elimina un parámetro
+            removeParam(key) {
+                this.url.searchParams.delete(key);
+                this._updateUrl();
+            }
+
+            // 🔹 Limpia todos los parámetros
+            clearParams() {
+                this.url.search = "";
+                this._updateUrl();
+            }
+
+            // 🔹 Método privado: actualiza la URL en el navegador sin recargar
+            _updateUrl() {
+                window.history.replaceState({}, "", this.url);
+            }
+        }
+
 
         function showToast(message, duration = 3000) {
             // Crear el div principal
@@ -200,7 +289,66 @@
         const horas = document.getElementById("horas")
         const precio = document.getElementById("precio")
         const horaExtra = document.getElementById("checkbox-hora")
+        const manager = new UrlManager()
 
+        function runLogic(value_horas, value_porteriaCompleta, value_porteriaBasica, value_karaoke, value_microfonos, value_pantalla, value_horaExtra) {
+            let cancelSetParams = false
+            try {
+                Number(value_horas)
+            } catch {
+                value_horas = 0 // force a wrong numeric value
+            }
+            switch (true) {
+                case (Number(value_horas) < 3 || Number(value_horas) > 5):
+                    console.log("value_horas tiene que estar entre 3 y 5")
+                    showToast("🤖 ERROR de URL: hora extra no disponible si son menos de 5 horas", 4000)
+                    cancelSetParams = true
+                    break
+                case (Number(value_horas) < 5 && value_horaExtra):
+                    console.log(value_horas)
+                    showToast("🤖 ERROR de URL: hora extra no disponible si son menos de 5 horas", 4000)
+                    cancelSetParams = true
+                    break
+                case (value_porteriaCompleta && value_porteriaBasica):
+                    showToast("🤖 ERROR de URL: Solo se puede elegir una opcción de iluminación", 4000)
+                    cancelSetParams = true
+                    break
+                case (value_karaoke == true && value_pantalla == false):
+                    showToast("🤖 ERROR de URL: El karaoke no puede elegirse sin pantalla", 4000)
+                    cancelSetParams = true
+                    break
+            }
+            if (cancelSetParams) {
+                manager.clearParams()
+            }
+            return cancelSetParams
+        }
+
+        function setParams() {
+            const value_horas = manager.getParam("horas")
+            const value_porteriaCompleta = (/true/).test(manager.getParam("porteriaCompleta"))
+            const value_porteriaBasica = (/true/).test(manager.getParam("porteriaBasica"))
+            const value_karaoke = (/true/).test(manager.getParam("karaoke"))
+            const value_microfonos = (/true/).test(manager.getParam("microfonos"))
+            const value_pantalla = (/true/).test(manager.getParam("pantalla"))
+            const value_horaExtra = (/true/).test(manager.getParam("horaExtra"))
+
+            if (runLogic(value_horas, value_porteriaCompleta, value_porteriaBasica, value_karaoke, value_microfonos, value_pantalla, value_horaExtra))
+                return
+            horas.value = value_horas
+            porteriaCompleta.checked = value_porteriaCompleta
+            porteriaBasica.checked = value_porteriaBasica
+            karaoke.checked = value_karaoke
+            microfonos.checked = value_microfonos
+            pantalla.checked = value_pantalla
+            if (value_horas == 5) {
+                horaExtra.checked = value_horaExtra
+                horaExtra.disabled = false
+                horaExtraText.classList.remove("line-through");
+            }
+            document.getElementById("url").value = window.location.href
+        }
+        setParams()
         function updatePrice() {
             const precioHora = 700
             let suma = 0
@@ -243,6 +391,7 @@
         updatePrice()
 
         horas.addEventListener("change", () => {
+            manager.setParam("horas", horas.value)
             const horaExtraText = document.getElementById("horaExtraText")
             if (Number(horas.value) < 5) {
                 horaExtra.disabled = true
@@ -260,41 +409,53 @@
                     horaExtraText.classList.remove("line-through");
 
             }
+            manager.setParam("horaExtra", horaExtra.checked)
             updatePrice()
         })
 
         porteriaCompleta.addEventListener("change", () => {
+            manager.setParam("porteriaCompleta", porteriaCompleta.checked)
             if (porteriaCompleta.checked) {
                 if (porteriaBasica.checked)
                     showToast("🤖 Desmarcando iluminación básica", 2000);
                 porteriaBasica.checked = false
+                manager.setParam("porteriaBasica", porteriaBasica.checked)
+
             }
             updatePrice()
         })
         porteriaBasica.addEventListener("change", () => {
+            manager.setParam("porteriaBasica", porteriaBasica.checked)
             if (porteriaBasica.checked) {
                 if (porteriaCompleta.checked)
                     showToast("🤖 Desmarcando portería", 2000);
                 porteriaCompleta.checked = false
+                manager.setParam("porteriaCompleta", porteriaCompleta.checked)
             }
             updatePrice()
 
         })
         karaoke.addEventListener("change", () => {
+            manager.setParam("karaoke", karaoke.checked)
             if (karaoke.checked) {
                 microfonos.checked = true
                 pantalla.checked = true
             }
+            manager.setParam("microfonos", microfonos.checked)
+            manager.setParam("pantalla", pantalla.checked)
             updatePrice()
         })
         pantalla.addEventListener("change", () => {
+            manager.setParam("pantalla", pantalla.checked)
             updatePrice()
             if (pantalla.checked == false && karaoke.checked) {
                 showToast("🤖 Desmarcando Karaoke", 2000);
                 karaoke.checked = false
+                manager.setParam("karaoke", karaoke.checked)
             }
         })
         microfonos.addEventListener("change", () => {
+            manager.setParam("microfonos", microfonos.checked)
             updatePrice()
             if (microfonos.checked == false && karaoke.checked) {
                 showToast("🤖 Karaoke sin micros es posible pero un poco apago no?", 3000);
@@ -304,6 +465,7 @@
             }
         })
         horaExtra.addEventListener("change", () => {
+            manager.setParam("horaExtra", horaExtra.checked)
             updatePrice()
         })
 
