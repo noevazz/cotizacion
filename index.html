@@ -209,14 +209,32 @@
                 suma += 500
             if (porteriaBasica.checked)
                 suma += 200
-            if (karaoke.checked && microfonos.checked && pantalla.checked)
-                suma += 500
-            else if (karaoke.checked && pantalla.checked)
-                suma += 300
-            else if (pantalla.checked)
-                suma += 300
-            else if (microfonos.checked)
-                suma += 300
+            let threeOptios = 0
+            if (karaoke.checked)
+                threeOptios += 4
+            if (microfonos.checked)
+                threeOptios += 2
+            if (pantalla.checked)
+                threeOptios += 1
+
+            switch (threeOptios) {
+                case 7: // karaoke, micros y pantalla
+                    suma += 550
+                    break
+                case 5: // karaoke y pantalla
+                    suma += 350
+                    break
+                case 3: // micro y pantalla
+                    suma += 300
+                    break
+                case 2: // micro
+                    suma += 200
+                    break
+                case 1: // pantalla
+                    suma += 200
+                    break
+            }
+
             if (horaExtra.checked)
                 suma += 700
 
@@ -266,8 +284,8 @@
             if (karaoke.checked) {
                 microfonos.checked = true
                 pantalla.checked = true
-                updatePrice()
             }
+            updatePrice()
         })
         pantalla.addEventListener("change", () => {
             updatePrice()
