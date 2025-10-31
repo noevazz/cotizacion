@@ -293,11 +293,8 @@
 
         function runLogic(value_horas, value_porteriaCompleta, value_porteriaBasica, value_karaoke, value_microfonos, value_pantalla, value_horaExtra) {
             let cancelSetParams = false
-            try {
-                Number(value_horas)
-            } catch {
+            if (Number.isNaN(Number(value_horas))) // if user passes a non-numeric number
                 value_horas = 0 // force a wrong numeric value
-            }
             switch (true) {
                 case (Number(value_horas) < 3 || Number(value_horas) > 5):
                     console.log("value_horas tiene que estar entre 3 y 5")
