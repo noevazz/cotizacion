@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cotizacion DJ NOAH</title>
+    <title>Cotizacion DJ NOAHMORPHIC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,6 +41,18 @@
             animation: fadeIn 0.3s ease-out;
         }
     </style>
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:title" content="Cotizacion DJ NOAHMORPHIC">
+    <meta property="og:description" content="Tu evento merece un DJ de alto nivel.">
+    <meta property="og:image" content="assets/preview.jpg">
+    <meta property="og:url" content="https://noevazz.github.io/cotizacion">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cotizacion DJ NOAHMORPHIC">
+    <meta name="twitter:description" content="Tu evento merece un DJ de alto nivel.">
+    <meta name="twitter:image" content="assets/preview.jpg">
 </head>
 
 <body class="bg-gray-900 text-gray-800">
@@ -224,7 +236,7 @@
             // 🔹 Obtiene el valor de un parámetro
             getParam(key) {
                 if (key == "horas") {
-                    const value_horas = this.url.searchParams.get(key) 
+                    const value_horas = this.url.searchParams.get(key)
                     if (!value_horas || (Number.isNaN(Number(value_horas)))) {
                         this.setParam("horas", "3")
                         if ((Number.isNaN(Number(value_horas))))
