@@ -131,9 +131,9 @@
                 <input disabled id="checkbox-hora" type="checkbox"
                     class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                 <span id="horaExtraText" class="line-through ms-2 font-medium text-gray-900 dark:text-gray-300">
-                    Hora extra 
+                    Hora extra
                 </span>
-                
+
             </label>
         </div>
 
@@ -226,7 +226,7 @@
 
         horas.addEventListener("change", () => {
             const horaExtraText = document.getElementById("horaExtraText")
-            if (Number(horas.value)<5) {
+            if (Number(horas.value) < 5) {
                 horaExtra.disabled = true
                 if (horaExtraText.classList.contains("line-through") == false)
                     horaExtraText.classList.add("line-through");
@@ -240,7 +240,7 @@
                 horaExtra.disabled = false
                 if (horaExtraText.classList.contains("line-through") == true)
                     horaExtraText.classList.remove("line-through");
-                
+
             }
             updatePrice()
         })
@@ -250,16 +250,17 @@
                 if (porteriaBasica.checked)
                     showToast("🤖 Desmarcando iluminación básica", 2000);
                 porteriaBasica.checked = false
-                updatePrice()
             }
+            updatePrice()
         })
         porteriaBasica.addEventListener("change", () => {
             if (porteriaBasica.checked) {
                 if (porteriaCompleta.checked)
                     showToast("🤖 Desmarcando portería", 2000);
                 porteriaCompleta.checked = false
-                updatePrice()
             }
+            updatePrice()
+
         })
         karaoke.addEventListener("change", () => {
             if (karaoke.checked) {
