@@ -567,8 +567,14 @@
         }
 
         if (horaExtra.checked) suma += 700;
+        const formatoMXN = new Intl.NumberFormat("es-MX", {
+          style: "currency",
+          currency: "MXN",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
 
-        precio.innerHTML = `$${suma}`;
+        precio.innerHTML = `${formatoMXN.format(suma)}`;
       }
       updatePrice();
 
@@ -637,7 +643,7 @@
         updatePrice();
         if (microfonos.checked == false && karaoke.checked) {
           showToast(
-            "🤖 Karaoke sin micros es posible pero un poco apago no?",
+            "🤖 Karaoke sin micros es posible pero un poco apagado no?",
             3000
           );
         }
