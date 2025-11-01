@@ -1,534 +1,652 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cotizacion DJ NOAHMORPHIC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#6366F1', // ejemplo: color morado
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366F1", // ejemplo: color morado
             },
-        };
+          },
+        },
+      };
     </script>
     <style>
-        #hero {
-            background-image: url("assets/background.gif");
-            background-size: cover;
-            background-position: center center;
+      #hero {
+        background-image: url("assets/background.gif");
+        background-size: cover;
+        background-position: center center;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-5px);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        .animate-fade-in {
-            animation: fadeIn 0.3s ease-out;
-        }
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out;
+      }
     </style>
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
-    <meta property="og:title" content="Cotizacion DJ NOAHMORPHIC">
-    <meta property="og:description" content="Tu evento merece un DJ de alto nivel.">
-    <meta property="og:image" content="https://noevazz.github.io/cotizacion/assets/preview.jpg">
-    <meta property="og:url" content="https://noevazz.github.io/cotizacion">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cotizacion DJ NOAHMORPHIC" />
+    <meta
+      property="og:description"
+      content="Tu evento merece un DJ de alto nivel."
+    />
+    <meta
+      property="og:image"
+      content="https://noevazz.github.io/cotizacion/assets/preview.jpg"
+    />
+    <meta property="og:url" content="https://noevazz.github.io/cotizacion" />
+    <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cotizacion DJ NOAHMORPHIC">
-    <meta name="twitter:description" content="Tu evento merece un DJ de alto nivel.">
-    <meta name="twitter:image" content="https://noevazz.github.io/cotizacion/assets/preview.jpg">
-</head>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cotizacion DJ NOAHMORPHIC" />
+    <meta
+      name="twitter:description"
+      content="Tu evento merece un DJ de alto nivel."
+    />
+    <meta
+      name="twitter:image"
+      content="https://noevazz.github.io/cotizacion/assets/preview.jpg"
+    />
+  </head>
 
-<body class="bg-gray-900 text-gray-800">
+  <body class="bg-gray-900 text-gray-800">
     <!-- Navbar -->
     <header class="text-gray-400 bg-black">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-primary">Cotización</h1>
-        </div>
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-primary">Cotización</h1>
+      </div>
     </header>
 
-
-
     <!-- Hero Section -->
-    <section id="hero" class="text-center py-20 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-        <h2 class="text-4xl font-extrabold mb-4">DJ NOAHMORPHIC</h2>
-        <p class="text-lg mb-6">Tu evento merece un DJ de alto nivel. 🔥</p>
-        <a href="https://www.instagram.com/djnoahmorphic/" target="_blank" title="djnoahmorphic"
-            class="bg-white text-blue-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition">
-            Instagram
-        </a>
+    <section
+      id="hero"
+      class="text-center py-20 bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+    >
+      <h2 class="text-4xl font-extrabold mb-4">DJ NOAHMORPHIC</h2>
+      <p class="text-lg mb-6">Tu evento merece un DJ de alto nivel. 🔥</p>
+      <a
+        href="https://www.instagram.com/djnoahmorphic/"
+        target="_blank"
+        title="djnoahmorphic"
+        class="bg-white text-blue-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition"
+      >
+        Instagram
+      </a>
     </section>
-
-
-
 
     <!-- Contenido principal -->
     <main class="max-w-5xl mx-auto py-12 px-8 text-gray-100">
-        <h3 class="text-2xl font-semibold mb-2">Fechas apartadas</h3>
+      <h3 class="text-2xl font-semibold mb-2">Fechas apartadas</h3>
 
-        <div class="flex flex-row flex-wrap gap-4 mb-12">
-            <div
-                class="p-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                <div class="flex flex-col">
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">Nov 22 - 2025</span>
-                    <span class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3">
-                        <span class="flex w-2.5 h-2.5 bg-yellow-300 rounded-full me-1.5 shrink-0"></span>
-                        Confirmando con cliente
-                    </span>
-                </div>
-            </div>
-
-            <div
-                class="p-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                <div class="flex flex-col">
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">Nov 23 - 2025</span>
-                    <span class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3">
-                        <span class="flex w-2.5 h-2.5 bg-teal-500 rounded-full me-1.5 shrink-0"></span>
-                        Apartado
-                    </span>
-                </div>
-            </div>
-
-            <div
-                class="p-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                <div class="flex flex-col">
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">Dic 24, 31 - 2025</span>
-                    <span class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3">
-                        <span class="flex w-2.5 h-2.5 bg-teal-500 rounded-full me-1.5 shrink-0"></span>
-                        Apartado
-                    </span>
-                </div>
-            </div>
+      <div class="flex flex-row flex-wrap gap-4 mb-12">
+        <div
+          class="p-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div class="flex flex-col">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white"
+              >Nov 22 - 2025</span
+            >
+            <span
+              class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3"
+            >
+              <span
+                class="flex w-2.5 h-2.5 bg-yellow-300 rounded-full me-1.5 shrink-0"
+              ></span>
+              Confirmando con cliente
+            </span>
+          </div>
         </div>
-
-
-
-
-
-
-
-        <h3 class="text-2xl font-semibold mb-4">Construye tu plan:</h3>
-        <p class="leading-relaxed">
-            Elige las opcciones que quieres incluir en tu evento.
-        </p>
-        <p>🤖 NoahBot te ayudara marcando y desmarcando las casillas.</p>
-        <br>
-
-
-        <div class="relative mb-4 w-full">
-            Horas:
-            <label for="hours-range" class="sr-only">Horas</label>
-            <input id="horas" type="range" value="3" min="3" max="5" step="1"
-                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600" />
-            <div class="flex justify-between mt-2 text-sm ">
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="space-y-6">
-            <label class="flex items-center">
-                <input id="checkbox-luces" type="checkbox"
-                    class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
-                    Portería de luces completa
-                </span>
-            </label>
-
-            <label class="flex items-center">
-                <input id="checkbox-luces-basica" type="checkbox"
-                    class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
-                    Iluminacion basica
-                </span>
-            </label>
-
-            <label class="flex items-center">
-                <input id="checkbox-karaoke" type="checkbox"
-                    class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
-                    Karaoke
-                </span>
-            </label>
-
-            <label class="flex items-center">
-                <input id="checkbox-microfonos" type="checkbox"
-                    class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
-                    Dos microfonos
-                </span>
-            </label>
-
-            <label class="flex items-center">
-                <input id="checkbox-pantalla" type="checkbox"
-                    class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
-                    Pantalla
-                </span>
-            </label>
-            <label class="flex items-center">
-                <input disabled id="checkbox-hora" type="checkbox"
-                    class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                <span id="horaExtraText" class="line-through ms-2 font-medium text-gray-900 dark:text-gray-300">
-                    Hora extra
-                </span>
-
-            </label>
-        </div>
-
-
-
-
 
         <div
-            class="my-4 py-2 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-            <div class="px-5 pb-5">
-                <h4>Cotizacion:</h4>
-                <div class="flex items-center justify-between">
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white" id="precio">$</span>
-
-                </div>
-
-                <div class="w-full max-w-sm mb-2">
-                    <p class="font-bold pt-2">Qué sigue?</p>
-                    <p>Copia este link y envíamelo a mi instagram.</p>
-                    <div class="flex items-center">
-                        <button onclick="copyToClipboard()"
-                            class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-blue-700 dark:bg-blue-600 border hover:bg-blue-800 dark:hover:bg-blue-700 rounded-s-lg border-blue-700 dark:border-blue-600 hover:border-blue-700 dark:hover:border-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">Copiar
-                            link</button>
-                        <div class="relative w-full">
-                            <input id="url" type="text" aria-describedby="helper-text-explanation"
-                                class="bg-gray-50 border border-e-0 border-gray-300 text-gray-500 dark:text-gray-400 text-sm border-s-0 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                readonly disabled />
-                        </div>
-                        <button data-tooltip-target="tooltip-url-shortener" onclick="copyToClipboard()"
-                            data-copy-to-clipboard-target="url-shortener"
-                            class="shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 hover:text-gray-900 bg-gray-100 border border-gray-300 rounded-e-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:hover:text-white dark:border-gray-600"
-                            type="button">
-                            <span id="default-icon">
-                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 18 20">
-                                    <path
-                                        d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
-                                </svg>
-                            </span>
-                            <span id="success-icon" class="hidden">
-                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 16 12">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                </svg>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex flex-row-reverse">
-                    <a href="https://www.instagram.com/djnoahmorphic/" target="_blank"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Ir a my Instagram</a>
-                </div>
-            </div>
+          class="p-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div class="flex flex-col">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white"
+              >Nov 23 - 2025</span
+            >
+            <span
+              class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3"
+            >
+              <span
+                class="flex w-2.5 h-2.5 bg-teal-500 rounded-full me-1.5 shrink-0"
+              ></span>
+              Apartado
+            </span>
+          </div>
         </div>
 
-    </main>
-    <div id="toast-container" class="fixed bottom-5 right-5 space-y-3 z-50 flex flex-col items-end"></div>
+        <div
+          class="p-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div class="flex flex-col">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white"
+              >Dic 24, 31 - 2025</span
+            >
+            <span
+              class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3"
+            >
+              <span
+                class="flex w-2.5 h-2.5 bg-teal-500 rounded-full me-1.5 shrink-0"
+              ></span>
+              Apartado
+            </span>
+          </div>
+        </div>
+      </div>
 
+      <h3 class="text-2xl font-semibold mb-4">Construye tu plan:</h3>
+      <p class="leading-relaxed">
+        Elige las opcciones que quieres incluir en tu evento.
+      </p>
+      <p>🤖 NoahBot te ayudara marcando y desmarcando las casillas.</p>
+      <br />
+
+      <div class="relative mb-4 w-full">
+        Horas:
+        <label for="hours-range" class="sr-only">Horas</label>
+        <input
+          id="horas"
+          type="range"
+          value="3"
+          min="3"
+          max="5"
+          step="1"
+          class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
+        />
+        <div class="flex justify-between mt-2 text-sm">
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="space-y-6">
+        <label class="flex items-center">
+          <input
+            id="checkbox-luces"
+            type="checkbox"
+            class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
+            Portería de luces completa
+          </span>
+        </label>
+
+        <label class="flex items-center">
+          <input
+            id="checkbox-luces-basica"
+            type="checkbox"
+            class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
+            Iluminacion basica
+          </span>
+        </label>
+
+        <label class="flex items-center">
+          <input
+            id="checkbox-karaoke"
+            type="checkbox"
+            class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
+            Karaoke
+          </span>
+        </label>
+
+        <label class="flex items-center">
+          <input
+            id="checkbox-microfonos"
+            type="checkbox"
+            class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
+            Dos microfonos
+          </span>
+        </label>
+
+        <label class="flex items-center">
+          <input
+            id="checkbox-pantalla"
+            type="checkbox"
+            class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <span class="ms-2 font-medium text-gray-900 dark:text-gray-300">
+            Pantalla
+          </span>
+        </label>
+        <label class="flex items-center">
+          <input
+            disabled
+            id="checkbox-hora"
+            type="checkbox"
+            class="w-4 h-4 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <span
+            id="horaExtraText"
+            class="line-through ms-2 font-medium text-gray-900 dark:text-gray-300"
+          >
+            Hora extra
+          </span>
+        </label>
+      </div>
+
+      <div
+        class="my-4 py-2 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+      >
+        <div class="px-5 pb-5">
+          <h4>Cotizacion:</h4>
+          <div class="flex items-center justify-between">
+            <span
+              class="text-3xl font-bold text-gray-900 dark:text-white"
+              id="precio"
+              >$</span
+            >
+          </div>
+
+          <div class="w-full max-w-sm mb-2">
+            <p class="font-bold pt-2">Qué sigue?</p>
+            <p>Copia este link y envíamelo a mi instagram.</p>
+            <div class="flex items-center">
+              <button
+                onclick="copyToClipboard()"
+                class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-blue-700 dark:bg-blue-600 border hover:bg-blue-800 dark:hover:bg-blue-700 rounded-s-lg border-blue-700 dark:border-blue-600 hover:border-blue-700 dark:hover:border-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+              >
+                Copiar link
+              </button>
+              <div class="relative w-full">
+                <input
+                  id="url"
+                  type="text"
+                  aria-describedby="helper-text-explanation"
+                  class="bg-gray-50 border border-e-0 border-gray-300 text-gray-500 dark:text-gray-400 text-sm border-s-0 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  readonly
+                  disabled
+                />
+              </div>
+              <button
+                data-tooltip-target="tooltip-url-shortener"
+                onclick="copyToClipboard()"
+                data-copy-to-clipboard-target="url-shortener"
+                class="shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-gray-500 dark:text-gray-400 hover:text-gray-900 bg-gray-100 border border-gray-300 rounded-e-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:hover:text-white dark:border-gray-600"
+                type="button"
+              >
+                <span id="default-icon">
+                  <svg
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 18 20"
+                  >
+                    <path
+                      d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"
+                    />
+                  </svg>
+                </span>
+                <span id="success-icon" class="hidden">
+                  <svg
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 16 12"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5.917 5.724 10.5 15 1.5"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex flex-row-reverse">
+            <a
+              href="https://www.instagram.com/djnoahmorphic/"
+              target="_blank"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Ir a my Instagram</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <div
+      id="toast-container"
+      class="fixed bottom-5 right-5 space-y-3 z-50 flex flex-col items-end"
+    ></div>
 
     <script>
-        function copyToClipboard() {
-            var copyText = window.location.href
+      function copyToClipboard() {
+        var copyText = window.location.href;
 
-            navigator.clipboard.writeText(copyText)
-                .then(() => {
-                    showToast("🤖 Se copio al porta papeles", 2500)
+        navigator.clipboard
+          .writeText(copyText)
+          .then(() => {
+            showToast("🤖 Se copio al porta papeles", 2500);
+          })
+          .catch((err) => {
+            showToast("🤖 Ups!, algo paso al copiar", 2500);
+          });
+      }
 
-                })
-                .catch(err => {
-                    showToast("🤖 Ups!, algo paso al copiar", 2500)
-                });
+      class UrlManager {
+        constructor() {
+          this.url = new URL(window.location.href);
         }
 
-        class UrlManager {
-            constructor() {
-                this.url = new URL(window.location.href);
-            }
-
-            // 🔹 Agrega o actualiza un parámetro
-            setParam(key, value) {
-                this.url.searchParams.set(key, value);
-                this._updateUrl();
-            }
-
-            // 🔹 Obtiene el valor de un parámetro
-            getParam(key) {
-                if (key == "horas") {
-                    const value_horas = this.url.searchParams.get(key)
-                    if (!value_horas || (Number.isNaN(Number(value_horas)))) {
-                        this.setParam("horas", "3")
-                        if ((Number.isNaN(Number(value_horas))))
-                            showToast("🤖 ERROR de URL: horas debe estar entre 3 y 5", 4000)
-                        return "3"
-                    }
-                }
-                return this.url.searchParams.get(key);
-            }
-
-            // 🔹 Elimina un parámetro
-            removeParam(key) {
-                this.url.searchParams.delete(key);
-                this._updateUrl();
-            }
-
-            // 🔹 Limpia todos los parámetros
-            clearParams() {
-                this.url.search = "";
-                this._updateUrl();
-            }
-
-            // 🔹 Método privado: actualiza la URL en el navegador sin recargar
-            _updateUrl() {
-                window.history.replaceState({}, "", this.url);
-            }
+        // 🔹 Agrega o actualiza un parámetro
+        setParam(key, value) {
+          if (value == false) this.removeParam(key);
+          else this.url.searchParams.set(key, value);
+          this._updateUrl();
         }
 
+        // 🔹 Obtiene el valor de un parámetro
+        getParam(key) {
+          if (key == "horas") {
+            const value_horas = this.url.searchParams.get(key);
+            if (!value_horas || Number.isNaN(Number(value_horas))) {
+              this.setParam("horas", "3");
+              if (Number.isNaN(Number(value_horas)))
+                showToast(
+                  "🤖 ERROR de URL: horas debe estar entre 3 y 5",
+                  4000
+                );
+              return "3";
+            }
+          }
+          return this.url.searchParams.get(key);
+        }
 
-        function showToast(message, duration = 3000) {
-            // Crear el div principal
-            const toast = document.createElement('div');
-            toast.className = `
+        // 🔹 Elimina un parámetro
+        removeParam(key) {
+          this.url.searchParams.delete(key);
+          this._updateUrl();
+        }
+
+        // 🔹 Limpia todos los parámetros
+        clearParams() {
+          this.url.search = "";
+          this._updateUrl();
+        }
+
+        // 🔹 Método privado: actualiza la URL en el navegador sin recargar
+        _updateUrl() {
+          window.history.replaceState({}, "", this.url);
+        }
+      }
+
+      function showToast(message, duration = 3000) {
+        // Crear el div principal
+        const toast = document.createElement("div");
+        toast.className = `
             flex items-center max-w-xs p-4 space-x-4
             bg-white divide-x divide-gray-200 border-solid
             rounded-lg shadow-sm dark:text-gray-400 
             dark:bg-gray-900 animate-fade-in
             `;
-            toast.setAttribute('role', 'alert');
+        toast.setAttribute("role", "alert");
 
-            // Agregar el contenido del mensaje
-            const textDiv = document.createElement('div');
-            textDiv.className = 'text-sm font-normal';
-            textDiv.textContent = message;
+        // Agregar el contenido del mensaje
+        const textDiv = document.createElement("div");
+        textDiv.className = "text-sm font-normal";
+        textDiv.textContent = message;
 
-            toast.appendChild(textDiv);
+        toast.appendChild(textDiv);
 
-            // Agregar el toast al contenedor
-            const container = document.getElementById('toast-container');
-            container.appendChild(toast);
+        // Agregar el toast al contenedor
+        const container = document.getElementById("toast-container");
+        container.appendChild(toast);
 
-            // Remover el toast después del tiempo indicado
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
-                setTimeout(() => toast.remove(), 500); // espera la animación antes de quitarlo
-            }, duration);
+        // Remover el toast después del tiempo indicado
+        setTimeout(() => {
+          toast.classList.add(
+            "opacity-0",
+            "transition-opacity",
+            "duration-500"
+          );
+          setTimeout(() => toast.remove(), 500); // espera la animación antes de quitarlo
+        }, duration);
+      }
+
+      const porteriaCompleta = document.getElementById("checkbox-luces");
+      const porteriaBasica = document.getElementById("checkbox-luces-basica");
+      const karaoke = document.getElementById("checkbox-karaoke");
+      const microfonos = document.getElementById("checkbox-microfonos");
+      const pantalla = document.getElementById("checkbox-pantalla");
+      const horas = document.getElementById("horas");
+      const precio = document.getElementById("precio");
+      const horaExtra = document.getElementById("checkbox-hora");
+      const manager = new UrlManager();
+
+      function runLogic(
+        value_horas,
+        value_porteriaCompleta,
+        value_porteriaBasica,
+        value_karaoke,
+        value_microfonos,
+        value_pantalla,
+        value_horaExtra
+      ) {
+        let cancelSetParams = false;
+        if (Number.isNaN(Number(value_horas)))
+          // if user passes a non-numeric number
+          value_horas = 0; // force a wrong numeric value
+        switch (true) {
+          case Number(value_horas) < 3 || Number(value_horas) > 5:
+            showToast("🤖 ERROR de URL: horas debe estar entre 3 y 5", 4000);
+            cancelSetParams = true;
+            break;
+          case Number(value_horas) < 5 && value_horaExtra:
+            console.log(value_horas);
+            showToast(
+              "🤖 ERROR de URL: hora extra no disponible si son menos de 5 horas",
+              4000
+            );
+            cancelSetParams = true;
+            break;
+          case value_porteriaCompleta && value_porteriaBasica:
+            showToast(
+              "🤖 ERROR de URL: Solo se puede elegir una opcción de iluminación",
+              4000
+            );
+            cancelSetParams = true;
+            break;
+          case value_karaoke == true && value_pantalla == false:
+            showToast(
+              "🤖 ERROR de URL: El karaoke no puede elegirse sin pantalla",
+              4000
+            );
+            cancelSetParams = true;
+            break;
+        }
+        if (cancelSetParams) {
+          manager.clearParams();
+          manager.setParam("horas", "3");
+        }
+        return cancelSetParams;
+      }
+
+      function setParams() {
+        const checkTrueOrSetFalse = (key) => {
+          const returnValue = /^true$/.test(manager.getParam(key));
+          if (!returnValue) manager.removeParam(key);
+          return returnValue;
+        };
+        const value_horas = manager.getParam("horas");
+        const value_porteriaCompleta = checkTrueOrSetFalse("porteriaCompleta");
+        const value_porteriaBasica = checkTrueOrSetFalse("porteriaBasica");
+        const value_karaoke = checkTrueOrSetFalse("karaoke");
+        const value_microfonos = checkTrueOrSetFalse("microfonos");
+        const value_pantalla = checkTrueOrSetFalse("pantalla");
+        const value_horaExtra = checkTrueOrSetFalse("horaExtra");
+
+        if (
+          runLogic(
+            value_horas,
+            value_porteriaCompleta,
+            value_porteriaBasica,
+            value_karaoke,
+            value_microfonos,
+            value_pantalla,
+            value_horaExtra
+          )
+        )
+          return;
+        horas.value = value_horas;
+        porteriaCompleta.checked = value_porteriaCompleta;
+        porteriaBasica.checked = value_porteriaBasica;
+        karaoke.checked = value_karaoke;
+        microfonos.checked = value_microfonos;
+        pantalla.checked = value_pantalla;
+        if (value_horas == 5) {
+          horaExtra.checked = value_horaExtra;
+          horaExtra.disabled = false;
+          horaExtraText.classList.remove("line-through");
+        }
+        document.getElementById("url").value = window.location.href;
+      }
+      setParams();
+      function updatePrice() {
+        const precioHora = 700;
+        let suma = 0;
+        suma += precioHora * Number(horas.value);
+        if (porteriaCompleta.checked) suma += 500;
+        if (porteriaBasica.checked) suma += 200;
+        let threeOptios = 0;
+        if (karaoke.checked) threeOptios += 4;
+        if (microfonos.checked) threeOptios += 2;
+        if (pantalla.checked) threeOptios += 1;
+
+        switch (threeOptios) {
+          case 7: // karaoke, micros y pantalla
+            suma += 500;
+            break;
+          case 5: // karaoke y pantalla
+            suma += 350;
+            break;
+          case 3: // micro y pantalla
+            suma += 300;
+            break;
+          case 2: // micro
+            suma += 200;
+            break;
+          case 1: // pantalla
+            suma += 200;
+            break;
         }
 
+        if (horaExtra.checked) suma += 700;
 
-        const porteriaCompleta = document.getElementById("checkbox-luces")
-        const porteriaBasica = document.getElementById("checkbox-luces-basica")
-        const karaoke = document.getElementById("checkbox-karaoke")
-        const microfonos = document.getElementById("checkbox-microfonos")
-        const pantalla = document.getElementById("checkbox-pantalla")
-        const horas = document.getElementById("horas")
-        const precio = document.getElementById("precio")
-        const horaExtra = document.getElementById("checkbox-hora")
-        const manager = new UrlManager()
+        precio.innerHTML = `$${suma}`;
+      }
+      updatePrice();
 
-        function runLogic(value_horas, value_porteriaCompleta, value_porteriaBasica, value_karaoke, value_microfonos, value_pantalla, value_horaExtra) {
-            let cancelSetParams = false
-            if (Number.isNaN(Number(value_horas))) // if user passes a non-numeric number
-                value_horas = 0 // force a wrong numeric value
-            switch (true) {
-                case (Number(value_horas) < 3 || Number(value_horas) > 5):
-                    showToast("🤖 ERROR de URL: horas debe estar entre 3 y 5", 4000)
-                    cancelSetParams = true
-                    break
-                case (Number(value_horas) < 5 && value_horaExtra):
-                    console.log(value_horas)
-                    showToast("🤖 ERROR de URL: hora extra no disponible si son menos de 5 horas", 4000)
-                    cancelSetParams = true
-                    break
-                case (value_porteriaCompleta && value_porteriaBasica):
-                    showToast("🤖 ERROR de URL: Solo se puede elegir una opcción de iluminación", 4000)
-                    cancelSetParams = true
-                    break
-                case (value_karaoke == true && value_pantalla == false):
-                    showToast("🤖 ERROR de URL: El karaoke no puede elegirse sin pantalla", 4000)
-                    cancelSetParams = true
-                    break
-            }
-            if (cancelSetParams) {
-                manager.clearParams()
-                manager.setParam("horas", "3")
-            }
-            return cancelSetParams
+      horas.addEventListener("change", () => {
+        manager.setParam("horas", horas.value);
+        const horaExtraText = document.getElementById("horaExtraText");
+        if (Number(horas.value) < 5) {
+          horaExtra.disabled = true;
+          if (horaExtraText.classList.contains("line-through") == false)
+            horaExtraText.classList.add("line-through");
+          if (horaExtra.checked) {
+            horaExtra.checked = false;
+            showToast("🤖 Hora extra solo valida a partir de 5 horas", 2500);
+          }
+        } else {
+          showToast("🤖 Hora extra disponible", 2000);
+          horaExtra.disabled = false;
+          if (horaExtraText.classList.contains("line-through") == true)
+            horaExtraText.classList.remove("line-through");
         }
+        manager.setParam("horaExtra", horaExtra.checked);
+        updatePrice();
+      });
 
-        function setParams() {
-            const value_horas = manager.getParam("horas")
-            const value_porteriaCompleta = (/true/).test(manager.getParam("porteriaCompleta"))
-            const value_porteriaBasica = (/true/).test(manager.getParam("porteriaBasica"))
-            const value_karaoke = (/true/).test(manager.getParam("karaoke"))
-            const value_microfonos = (/true/).test(manager.getParam("microfonos"))
-            const value_pantalla = (/true/).test(manager.getParam("pantalla"))
-            const value_horaExtra = (/true/).test(manager.getParam("horaExtra"))
-
-            if (runLogic(value_horas, value_porteriaCompleta, value_porteriaBasica, value_karaoke, value_microfonos, value_pantalla, value_horaExtra))
-                return
-            horas.value = value_horas
-            porteriaCompleta.checked = value_porteriaCompleta
-            porteriaBasica.checked = value_porteriaBasica
-            karaoke.checked = value_karaoke
-            microfonos.checked = value_microfonos
-            pantalla.checked = value_pantalla
-            if (value_horas == 5) {
-                horaExtra.checked = value_horaExtra
-                horaExtra.disabled = false
-                horaExtraText.classList.remove("line-through");
-            }
-            document.getElementById("url").value = window.location.href
+      porteriaCompleta.addEventListener("change", () => {
+        manager.setParam("porteriaCompleta", porteriaCompleta.checked);
+        if (porteriaCompleta.checked) {
+          if (porteriaBasica.checked)
+            showToast("🤖 Desmarcando iluminación básica", 2000);
+          porteriaBasica.checked = false;
+          manager.setParam("porteriaBasica", porteriaBasica.checked);
         }
-        setParams()
-        function updatePrice() {
-            const precioHora = 700
-            let suma = 0
-            suma += precioHora * Number(horas.value)
-            if (porteriaCompleta.checked)
-                suma += 500
-            if (porteriaBasica.checked)
-                suma += 200
-            let threeOptios = 0
-            if (karaoke.checked)
-                threeOptios += 4
-            if (microfonos.checked)
-                threeOptios += 2
-            if (pantalla.checked)
-                threeOptios += 1
-
-            switch (threeOptios) {
-                case 7: // karaoke, micros y pantalla
-                    suma += 500
-                    break
-                case 5: // karaoke y pantalla
-                    suma += 350
-                    break
-                case 3: // micro y pantalla
-                    suma += 300
-                    break
-                case 2: // micro
-                    suma += 200
-                    break
-                case 1: // pantalla
-                    suma += 200
-                    break
-            }
-
-            if (horaExtra.checked)
-                suma += 700
-
-            precio.innerHTML = `$${suma}`;
+        updatePrice();
+      });
+      porteriaBasica.addEventListener("change", () => {
+        manager.setParam("porteriaBasica", porteriaBasica.checked);
+        if (porteriaBasica.checked) {
+          if (porteriaCompleta.checked)
+            showToast("🤖 Desmarcando portería", 2000);
+          porteriaCompleta.checked = false;
+          manager.setParam("porteriaCompleta", porteriaCompleta.checked);
         }
-        updatePrice()
-
-        horas.addEventListener("change", () => {
-            manager.setParam("horas", horas.value)
-            const horaExtraText = document.getElementById("horaExtraText")
-            if (Number(horas.value) < 5) {
-                horaExtra.disabled = true
-                if (horaExtraText.classList.contains("line-through") == false)
-                    horaExtraText.classList.add("line-through");
-                if (horaExtra.checked) {
-                    horaExtra.checked = false
-                    showToast("🤖 Hora extra solo valida a partir de 5 horas", 2500);
-                }
-            }
-            else {
-                showToast("🤖 Hora extra disponible", 2000);
-                horaExtra.disabled = false
-                if (horaExtraText.classList.contains("line-through") == true)
-                    horaExtraText.classList.remove("line-through");
-
-            }
-            manager.setParam("horaExtra", horaExtra.checked)
-            updatePrice()
-        })
-
-        porteriaCompleta.addEventListener("change", () => {
-            manager.setParam("porteriaCompleta", porteriaCompleta.checked)
-            if (porteriaCompleta.checked) {
-                if (porteriaBasica.checked)
-                    showToast("🤖 Desmarcando iluminación básica", 2000);
-                porteriaBasica.checked = false
-                manager.setParam("porteriaBasica", porteriaBasica.checked)
-
-            }
-            updatePrice()
-        })
-        porteriaBasica.addEventListener("change", () => {
-            manager.setParam("porteriaBasica", porteriaBasica.checked)
-            if (porteriaBasica.checked) {
-                if (porteriaCompleta.checked)
-                    showToast("🤖 Desmarcando portería", 2000);
-                porteriaCompleta.checked = false
-                manager.setParam("porteriaCompleta", porteriaCompleta.checked)
-            }
-            updatePrice()
-
-        })
-        karaoke.addEventListener("change", () => {
-            manager.setParam("karaoke", karaoke.checked)
-            if (karaoke.checked) {
-                microfonos.checked = true
-                pantalla.checked = true
-            }
-            manager.setParam("microfonos", microfonos.checked)
-            manager.setParam("pantalla", pantalla.checked)
-            updatePrice()
-        })
-        pantalla.addEventListener("change", () => {
-            manager.setParam("pantalla", pantalla.checked)
-            updatePrice()
-            if (pantalla.checked == false && karaoke.checked) {
-                showToast("🤖 Desmarcando Karaoke", 2000);
-                karaoke.checked = false
-                manager.setParam("karaoke", karaoke.checked)
-            }
-        })
-        microfonos.addEventListener("change", () => {
-            manager.setParam("microfonos", microfonos.checked)
-            updatePrice()
-            if (microfonos.checked == false && karaoke.checked) {
-                showToast("🤖 Karaoke sin micros es posible pero un poco apago no?", 3000);
-            }
-            if (microfonos.checked && karaoke.checked) {
-                showToast("🤖 Perfecto un karaoke que se escucha!", 2000);
-            }
-        })
-        horaExtra.addEventListener("change", () => {
-            manager.setParam("horaExtra", horaExtra.checked)
-            updatePrice()
-        })
-
+        updatePrice();
+      });
+      karaoke.addEventListener("change", () => {
+        manager.setParam("karaoke", karaoke.checked);
+        if (karaoke.checked) {
+          microfonos.checked = true;
+          pantalla.checked = true;
+        }
+        manager.setParam("microfonos", microfonos.checked);
+        manager.setParam("pantalla", pantalla.checked);
+        updatePrice();
+      });
+      pantalla.addEventListener("change", () => {
+        manager.setParam("pantalla", pantalla.checked);
+        updatePrice();
+        if (pantalla.checked == false && karaoke.checked) {
+          showToast("🤖 Desmarcando Karaoke", 2000);
+          karaoke.checked = false;
+          manager.setParam("karaoke", karaoke.checked);
+        }
+      });
+      microfonos.addEventListener("change", () => {
+        manager.setParam("microfonos", microfonos.checked);
+        updatePrice();
+        if (microfonos.checked == false && karaoke.checked) {
+          showToast(
+            "🤖 Karaoke sin micros es posible pero un poco apago no?",
+            3000
+          );
+        }
+        if (microfonos.checked && karaoke.checked) {
+          showToast("🤖 Perfecto un karaoke que se escucha!", 2000);
+        }
+      });
+      horaExtra.addEventListener("change", () => {
+        manager.setParam("horaExtra", horaExtra.checked);
+        updatePrice();
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
