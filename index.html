@@ -16,12 +16,29 @@
           },
         },
       };
+      window.addEventListener("load", () => {
+        document.getElementById("hero").classList.add("loaded");
+      });
     </script>
     <style>
       #hero {
-        background-image: url("assets/background.gif");
-        background-size: cover;
-        background-position: center center;
+        position: relative;
+        isolation: isolate; /* clave para que el ::before con z-index negativo no se “escape” */
+        overflow: hidden;
+      }
+
+      /* 2) El fondo vive en el ::before, no afecta a los hijos */
+      #hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("assets/background.gif") center/cover no-repeat;
+        opacity: 0;
+        transition: opacity 2.5s ease-in;
+        z-index: -1; /* detrás del contenido, pero dentro del #hero gracias a isolation */
+      }
+      #hero.loaded::before {
+        opacity: 1;
       }
 
       @keyframes fadeIn {
@@ -77,10 +94,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section
+          <section
       id="hero"
-      class="text-center py-20 bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+      class="text-center py-20 bg-gradient-to-t from-slate-900 to-zinc-800 text-white"
     >
+
       <h2 class="text-4xl font-extrabold mb-4">DJ NOAHMORPHIC</h2>
       <p class="text-lg mb-6">Tu evento merece un DJ de alto nivel. 🔥</p>
       <a
